@@ -1,0 +1,13 @@
+= Some undocumented Keyboard shortcuts =
+----
+||Keys||Functions||
+||↑↓←→|| seek +60, -60, +10, -10 seconds|| 
+||CTRL + ↑↓←||increase/decrease/reset speed||
+||OPT   + ↑↓←||increase/decrease/reset Audio Delay||
+||CMD  + ↑↓←||increase/decrease/reset Subtitle Delay||
+||c||show/hide accessary controls||
+||space||Play/Pause||
+||f||toggle Fullscreen||
+||=/-||increase/decrease volume||
+||m||toggle mute||
+  
