@@ -1,4 +1,3 @@
-#labels enable,external,codecs,real,ffmpeg-mt,multi-touch
 = Advanced Topics =
 
 ==Using multi-touch==
@@ -13,6 +12,6 @@
       #. cd ~/Library/Preferences/
       #. type  *{{{defaults write org.niltsh.MPlayerX Prefer64bitMPlayer 0}}}*
             this hidden setting will force MPlayerX to use the 32bit version of mplayer, whatever your Mac has a 64bit CPU or not.
-      #. right-click MPlayerX > show Package Content, goto Contents/Resources/binaries/m32/codecs
-      #. copy the codec binaries into MPlayerX.app/Contents/Resources/binaries/m32/codecs/
-            (e.g Real Codec binaries in RealPlayer.app/Contents/Frameworks/HXClientKit.framework/HelixPlugins/Codecs/{{{*}}}.bundle)
+      #. right-click MPlayerX > show Package Content, goto *Contents/Resources/binaries/m32/codecs*
+      #. copy the codec binaries into *MPlayerX.app/Contents/Resources/binaries/m32/codecs/*
+            (e.g Real Codec binaries in *{{{RealPlayer.app/Contents/Frameworks/HXClientKit.framework/HelixPlugins/Codecs/*.bundle}}}*)
