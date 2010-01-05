@@ -1,11 +1,11 @@
 = Advanced Topics =
-
+----
 ==Using multi-touch==
       Now MPlayerX supports magnify, swipe if your Mac supports Multi-Touch.
-
+----
 ==Using multi-thread ffmpeg==
       Although this setting is disclosed in Preferences, I can't assure it will always perform right with this setting ON, since ffmpeg-mt is still under intensive development. However certainly some HQ movies needs ffmpeg-mt, so please turn it on when you think you really need it.
-
+----
 ==Using external codecs==
       Although ffmpeg is a so powerful codecs package, sometimes it can't do it right for some codec, such as Real Codecs. MPlayerX could take advantage of external codecs, but it needs some work.
       #. open Terminal in /Applications/Utilities/
