@@ -1,11 +1,14 @@
 == Basics ==
   #. load subtitles
    * if the Movie file name is *part of* or *equal to* the Subtitle file name _(excluding file extension)_, the Subtitle will be loaded automatically before playback starts.
-
+  #. about the text subtitle encoding detection
+   * If the file is considered as a subtitle file, AND with the file extension, which is one of _(utf, utf8, utf-8, srt, smi, rt, txt, ssa, aqt, jss, js, ass)_, it will be considered as a *TEXT* subtitle, then MPlayerX will use UCD to detect the encoding, other wise, it may be loaded but its encoding method won't be checked.
+   If the file extensions lack some ones you are using, please let me know.
+   If there are multiple TEXT subtitle files with different encoding method. MPlayerX will use the first detected one.
 ----
 
 == Some Keyboard shortcuts ==
-||Keys||Functions||
+||*Keys*||*Functions*||
 ||↑↓←→|| seek +60, -60, +10, -10 seconds|| 
 ||CTRL + ↑↓←||increase/decrease/reset speed||
 ||OPT   + ↑↓←||increase/decrease/reset Audio Delay||
@@ -34,3 +37,11 @@
   #. right-click MPlayerX > show Package Content, goto *Contents/Resources/binaries/m32/codecs*
   #. copy the codec binaries into *MPlayerX.app/Contents/Resources/binaries/m32/codecs/*
     (e.g Real Codec binaries in *{{{RealPlayer.app/Contents/Frameworks/HXClientKit.framework/HelixPlugins/Codecs/*.bundle}}}*)
+------
+===Change subtitle font===
+ By default, MPlayerX uses *MicroHei* font from *WenQuanYi*_([http://www.wenq.org])_, which is adopted from _Google Droid Font_. For me, it balances between aesthetics and extensive language support.(also copyright should be considered)
+ If you really want to change the subtitle font by your own favorite. Follow this:
+  #. open Terminal in /Applications/Utilities/
+  #. cd ~/Library/Preferences/
+  #. type  *{{{defaults write org.niltsh.MPlayerX SubFontPath "the full path of your font"}}}*
+    but remember with this setting, you risk yourself with the possibility of mono-language support, since not all fonts support as many languages as *MicroHei* could. This is also the reason I didn't expose this setting in the Preferences.
