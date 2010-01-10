@@ -8,6 +8,7 @@
    If the file extensions lack some ones you are using, please let me know.
    If there are multiple TEXT subtitle files with different encoding method. MPlayerX will use the first detected one.
 ----
+----
 
 == Some Keyboard shortcuts ==
 || *Keys* || *Functions* ||
@@ -27,12 +28,12 @@
 || CMD + SHIFT + c || continue from last stopped time pos ||
 
 ----
-
+----
 == Advanced Topics ==
 ===Using multi-thread ffmpeg===
 Although this setting is disclosed in Preferences, I can't assure it will always perform right with this setting ON, since ffmpeg-mt is still under intensive development. However certainly some HQ movies needs ffmpeg-mt, so please turn it on when you think you really need it.
 <p></p>
-
+----
 ===Using external codecs===
 Although ffmpeg is a so powerful codecs package, sometimes it can't do it right for some codec, such as Real Codecs. MPlayerX could take advantage of external codecs, but it needs some work.
   #. open Terminal in /Applications/Utilities/
@@ -43,7 +44,7 @@ Although ffmpeg is a so powerful codecs package, sometimes it can't do it right 
   #. copy the codec binaries into *MPlayerX.app/Contents/Resources/binaries/m32/codecs/*
     (e.g Real Codec binaries in *{{{RealPlayer.app/Contents/Frameworks/HXClientKit.framework/HelixPlugins/Codecs/*.bundle}}}*)
 <p></p>
-
+----
 ===Change subtitle font===
 By default, MPlayerX uses *MicroHei* font from *WenQuanYi*_([http://www.wenq.org])_, which is adopted from _Google Droid Font_. For me, it balances between aesthetics and extensive language support._(also copyright should be considered)._
 If you really want to change the subtitle font by your own favorite. Follow this:
@@ -52,7 +53,7 @@ If you really want to change the subtitle font by your own favorite. Follow this
   #. type  *{{{defaults write org.niltsh.MPlayerX SubFontPath "the full path of your font"}}}*
     but remember with this setting, you risk yourself with the possibility of mono-language support, since not all fonts support as many languages as *MicroHei* could. This is also the reason I didn't expose this setting in the Preferences.
 <p></p>
-
+----
 === More {{{defaults write}}} settings ===
 <p>Although there are many value could be tuned in MPlayerX, I didn't disclose them to the UI, because I couldn't figure out a *beautiful way* to show them in the Preferences, either I think personally, most user won't care about them that much.</p>
 <p>But for some ones, if you are not satisfied by the current MPlayerX. following are what you could change by {{{defaults}}} in Terminal.</p>
