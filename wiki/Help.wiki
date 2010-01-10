@@ -1,4 +1,6 @@
 == Basics ==
+  #. using multi-touch
+   * If your mac support multi-touch. MPlayerX could resize the window by how you resize the image in Preview with two fingers. And forward/backward when you swipe ↑↓←→ with three fingers.
   #. load subtitles
    * if the Movie file name is *part of* or *equal to* the Subtitle file name _(excluding file extension)_, the Subtitle will be loaded automatically before playback starts.
   #. about the text subtitle encoding detection
@@ -17,18 +19,20 @@
 || space || Play/Pause ||
 || f || toggle Fullscreen ||
 || SHIFT + f || toggle Fill screen ||
-|| = - || increase/decrease volume ||
+|| =/- || increase/decrease volume ||
+|| CMD + =/- || increase/decrease subtitle size ||
 || m || toggle mute ||
+|| a || switch audio ||
+|| s || switch subtitle ||
+|| CMD + SHIFT + c || continue from last stopped time pos ||
 
 ----
 
 == Advanced Topics ==
-===Using multi-touch===
-Now MPlayerX supports magnify, swipe if your Mac supports Multi-Touch.
-----
 ===Using multi-thread ffmpeg===
 Although this setting is disclosed in Preferences, I can't assure it will always perform right with this setting ON, since ffmpeg-mt is still under intensive development. However certainly some HQ movies needs ffmpeg-mt, so please turn it on when you think you really need it.
-----
+<p></p>
+
 ===Using external codecs===
 Although ffmpeg is a so powerful codecs package, sometimes it can't do it right for some codec, such as Real Codecs. MPlayerX could take advantage of external codecs, but it needs some work.
   #. open Terminal in /Applications/Utilities/
@@ -38,7 +42,8 @@ Although ffmpeg is a so powerful codecs package, sometimes it can't do it right 
   #. right-click MPlayerX > show Package Content, goto *Contents/Resources/binaries/m32/codecs*
   #. copy the codec binaries into *MPlayerX.app/Contents/Resources/binaries/m32/codecs/*
     (e.g Real Codec binaries in *{{{RealPlayer.app/Contents/Frameworks/HXClientKit.framework/HelixPlugins/Codecs/*.bundle}}}*)
-------
+<p></p>
+
 ===Change subtitle font===
 By default, MPlayerX uses *MicroHei* font from *WenQuanYi*_([http://www.wenq.org])_, which is adopted from _Google Droid Font_. For me, it balances between aesthetics and extensive language support._(also copyright should be considered)._
 If you really want to change the subtitle font by your own favorite. Follow this:
@@ -46,3 +51,20 @@ If you really want to change the subtitle font by your own favorite. Follow this
   #. cd ~/Library/Preferences/
   #. type  *{{{defaults write org.niltsh.MPlayerX SubFontPath "the full path of your font"}}}*
     but remember with this setting, you risk yourself with the possibility of mono-language support, since not all fonts support as many languages as *MicroHei* could. This is also the reason I didn't expose this setting in the Preferences.
+<p></p>
+
+=== More {{{defaults write}}} settings ===
+<p>Although there are many value could be tuned in MPlayerX, I didn't disclose them to the UI, because I couldn't figure out a *beautiful way* to show them in the Preferences, either I think personally, most user won't care about them that much.</p>
+<p>But for some ones, if you are not satisfied by the current MPlayerX. following are what you could change by {{{defaults}}} in Terminal.</p>
+
+|| *name* || *type* || *default value* || *meaning* ||
+|| CtrlUIAutoHideTime || float || 2 || the *half* value of the time to hide the player controller in seconds ||
+|| SpeedStepTime || float || 0.1 || when to change the speed in the accessary control(the TextField), the increment value when press ↑↓ ||
+|| SubDelayStepTime || float || 0.1 || similar with {{{SpeedStepTime}}}, the time in seconds||
+|| AudioDelayStepTime || float || 0.1 || similar with {{{SpeedStepTime}}}, the time in seconds||
+|| SubScaleStepValue || float || 0.1 || similar with {{{SpeedStepTime}}}, it is rational to set this value within 0-1 ||
+|| SeekStepTimeLR || float || 10 || when use ←→ to forward/backward, the jump time in seconds ||
+|| SeekStepTimeUB || float || 60 || when use ↑↓ to forward/backward, the jump time in seconds ||
+|| VolumeStep || float || 10 || when use =/- or menu to increase/decrease the volume, the increment value(should be within 0-100) ||
+|| SnapshotSavePath || string || _(internal value)_ || if you don't want to save the snapshot pics on the desktop, the *Full Path* of the folder where you want to save it||
+|| DebugEnableOpenURL || BOOL || NO || it is now, MPlayerX disabled to open a streaming in the internet, because this feature is really unreliable (in my computer). I will enable it when mplayer has solve the problem. But if you want to try, you could turn it on ||
