@@ -60,7 +60,7 @@ If you really want to change the subtitle font by your own favorite. Follow this
 
 || *name* || *type* || *default value* || *meaning* ||
 || CtrlUIAutoHideTime || float || 2 || the *half* value of the time to hide the player controller in seconds ||
-|| SpeedStepTime || float || 0.1 || when to change the speed in the accessary control(the TextField), the increment value when press ↑↓ ||
+|| SpeedStepIncre || float || 0.1 || when to change the speed in the accessary control(the TextField), the increment value when press ↑↓ ||
 || SubDelayStepTime || float || 0.1 || similar with {{{SpeedStepTime}}}, the time in seconds||
 || AudioDelayStepTime || float || 0.1 || similar with {{{SpeedStepTime}}}, the time in seconds||
 || SubScaleStepValue || float || 0.1 || similar with {{{SpeedStepTime}}}, it is rational to set this value within 0-1 ||
