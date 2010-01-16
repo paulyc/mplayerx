@@ -1,0 +1,7 @@
+== How to build MPlayerX==
+
+  #. checkout all the files in /trunk
+  #. go to Universal Detector/
+   *. open the project
+   *. change the current build configuration to *Release*, *NOT Debug* (since MPlayerX will copy the binaries from the release folder)
+  #. go to MPlayerX/, and build
