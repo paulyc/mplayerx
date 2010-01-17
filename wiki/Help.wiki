@@ -2,11 +2,13 @@
   #. using multi-touch
    * If your mac support multi-touch. MPlayerX could resize the window by how you resize the image in Preview with two fingers. And forward/backward when you swipe ↑↓←→ with three fingers.
   #. load subtitles
-   * if the Movie file name is *part of* or *equal to* the Subtitle file name _(excluding file extension)_, the Subtitle will be loaded automatically before playback starts.
+   ~~if the Movie file name is *part of* or *equal to* the Subtitle file name _(excluding file extension)_, the Subtitle will be loaded automatically before playback starts.~~
+   * Now you could decide how MPlayerX load the subtitles, in the *Preferences panel*.
   #. about the text subtitle encoding detection
-   * If the file is considered as a subtitle file, AND with the file extension, which is one of _(utf, utf8, utf-8, srt, smi, rt, txt, ssa, aqt, jss, js, ass)_, it will be considered as a *TEXT* subtitle, then MPlayerX will use UCD to detect the encoding, other wise, it may be loaded but its encoding method won't be checked.
+   * If the file is considered as a subtitle file, AND with the file extension, which is one of _(utf, utf8, srt, smi, txt, ssa, ass)_, it will be considered as a *TEXT* subtitle, then MPlayerX will use UCD to detect the encoding, other wise, it may be loaded but its encoding method won't be checked.
    If the file extensions lack some ones you are using, please let me know.
-   If there are multiple TEXT subtitle files with different encoding method. MPlayerX will use the first detected one.
+    ~~ If there are multiple TEXT subtitle files with different encoding method. MPlayerX will use the first detected one.~~Now I may say, the function of sub-load has been brought to a new level, now MPlayerX not only detect the encode, but also convert the sub files to ONE encode method. It is especially useful when you have multiple sub files with different encoding, such as window-1251(English), GB18030(Chinese Simplified), BIG5(Chinese Tradition), SHIFT_JIS(Japanese), EUC-KOR(Korean).
+
 ----
 ----
 
@@ -25,7 +27,7 @@
 || m || toggle mute ||
 || a || switch audio ||
 || s || switch subtitle ||
-|| CMD + SHIFT + c || continue from last stopped time pos ||
+|| SHIFT + c || continue from last stopped time pos ||
 
 ----
 ----
@@ -59,7 +61,6 @@ If you really want to change the subtitle font by your own favorite. Follow this
 <p>But for some ones, if you are not satisfied by the current MPlayerX. following are what you could change by {{{defaults}}} in Terminal.</p>
 
 || *name* || *type* || *default value* || *meaning* ||
-|| CtrlUIAutoHideTime || float || 2 || the *half* value of the time to hide the player controller in seconds ||
 || SpeedStepIncre || float || 0.1 || when to change the speed in the accessary control(the TextField), the increment value when press ↑↓ ||
 || SubDelayStepTime || float || 0.1 || similar with {{{SpeedStepTime}}}, the time in seconds||
 || AudioDelayStepTime || float || 0.1 || similar with {{{SpeedStepTime}}}, the time in seconds||
@@ -68,4 +69,3 @@ If you really want to change the subtitle font by your own favorite. Follow this
 || SeekStepTimeUB || float || 60 || when use ↑↓ to forward/backward, the jump time in seconds ||
 || VolumeStep || float || 10 || when use =/- or menu to increase/decrease the volume, the increment value(should be within 0-100) ||
 || SnapshotSavePath || string || _(internal value)_ || if you don't want to save the snapshot pics on the desktop, the *Full Path* of the folder where you want to save it||
-|| DebugEnableOpenURL || BOOL || NO || it is now, MPlayerX disabled to open a streaming in the internet, because this feature is really unreliable (in my computer). I will enable it when mplayer has solve the problem. But if you want to try, you could turn it on ||
