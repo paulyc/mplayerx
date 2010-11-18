@@ -2,6 +2,6 @@
   
   #. svn checkout *{{{http://mplayerx.googlecode.com/svn/trunk/ mplayerx-read-only}}}*
   #. go to Universal Detector/
-   *. open the project
+   *. open the UniversalDetector.xcodeproj
    *. change the current build configuration to *Release*, *NOT Debug* (since MPlayerX will copy the binaries from the release folder)
-  #. go to MPlayerX/, and build
+  #. go to MPlayerX/, open MPlayerX.xcodeproj and build
