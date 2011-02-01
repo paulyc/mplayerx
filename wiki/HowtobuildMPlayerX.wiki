@@ -1,6 +1,6 @@
 == How to build MPlayerX==
   
-  #. svn checkout *{{{http://mplayerx.googlecode.com/svn/trunk/ mplayerx-read-only}}}*
+  #. git clone *{{{git://github.com/niltsh/MPlayerX.git}}}*
   #. go to Universal Detector/
    *. open the UniversalDetector.xcodeproj
    *. change the current build configuration to *Release*, *NOT Debug* (since MPlayerX will copy the binaries from the release folder)
